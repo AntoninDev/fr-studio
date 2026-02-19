@@ -1,5 +1,5 @@
-const titleText = "Impressão de alta qualidade para sua marca.";
-const subtitleText = "Cartões, banners, camisas e muito mais.";
+const titleText = "Não criamos arte. Criamos posicionamento.";
+const subtitleText = "Estratégia, design e execução para negócios que querem crescer.";
 
 const speed = 70;
 

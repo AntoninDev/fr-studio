@@ -43,13 +43,17 @@ h1, h2, h3 {
 
   /* ===== BODY ===== */
   body {
-    padding-top: 70px;
+    padding-top: 12px;
     font-family: "FonteTextos", Arial, sans-serif;
     background-color: var(--preto);
     color: var(--branco);
     line-height: 1.6;
   }
-  
+ 
+  .texto-abaixo-banner {
+    
+  }
+
   /* ===== CONTAINER PADRÃO ===== */
   .container {
     width: 90%;
