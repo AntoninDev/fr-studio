@@ -25,3 +25,26 @@ function typeSubtitle() {
 }
 
 typeTitle();
+
+const menuBtn = document.getElementById("menu-btn");
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("overlay");
+
+let menuOpen = false;
+
+menuBtn.addEventListener("click", () => {
+  menuOpen = !menuOpen;
+
+  sidebar.classList.toggle("active");
+  overlay.classList.toggle("active");
+
+  // muda o ícone
+  menuBtn.textContent = menuOpen ? "✕" : "☰";
+});
+
+overlay.addEventListener("click", () => {
+  sidebar.classList.remove("active");
+  overlay.classList.remove("active");
+  menuBtn.textContent = "☰";
+  menuOpen = false;
+});
