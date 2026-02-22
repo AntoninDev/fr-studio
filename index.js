@@ -1,4 +1,4 @@
-const titleText = "Não criamos arte. Criamos posicionamento.";
+const titleText = "Não criamos arte. \nCriamos posicionamento.";
 const subtitleText = "Estratégia, design e execução para negócios que querem crescer.";
 
 const speed = 70;
