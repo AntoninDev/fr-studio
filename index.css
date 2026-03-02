@@ -152,7 +152,11 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
 }
 .group-title{ font-size:26px; }
 
+/* controles de topo (deixei opcional, dá pra ocultar) */
 .pager-controls{ display:flex; gap:10px; }
+.pager-controls--top{ display:none; } /* <-- se quiser mostrar no topo, troque pra flex */
+
+/* botão base */
 .pager-btn{
   width:38px; height:38px;
   border-radius:999px;
@@ -167,10 +171,26 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
 .pager-btn:active{ transform:scale(.96); }
 .pager-btn.is-hidden{ display:none; }
 
-/* ===== AQUI: SEMPRE 2 COLUNAS (DESKTOP/TABLET) ===== */
+/* ===== GRID + SETAS LATERAIS ===== */
 .portfolio-grid{
   position:relative;
+  padding: 0 42px; /* espaço pros botões laterais */
 }
+
+/* botões laterais no meio vertical do grid */
+.pager-btn--side{
+  position:absolute;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:5;
+  width:40px;
+  height:40px;
+  background: rgba(13,13,13,.78);
+  border: 1px solid rgba(255,255,255,.14);
+  backdrop-filter: blur(10px);
+}
+.portfolio-grid .pager-prev.pager-btn--side{ left:0; }
+.portfolio-grid .pager-next.pager-btn--side{ right:0; }
 
 /* cada "page" é um par de cards */
 .page{
@@ -220,6 +240,14 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
   font-size:12px;
   font-weight:600;
   backdrop-filter: blur(8px);
+}
+
+/* ===== MOBILE: continua 2 colunas, só “aperta” ===== */
+@media (max-width: 520px){
+  .portfolio-grid{ padding: 0 36px; }
+  .page{ gap:10px; }
+  .portfolio-card{ border-radius:16px; }
+  .pager-btn--side{ width:36px; height:36px; font-size:20px; }
 }
 
 /* ===== MODAL ===== */
@@ -308,11 +336,6 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
 }
 .whatsapp-float:hover{ background:var(--brand-hover); transform:scale(1.08); }
 .whatsapp-float img{ width:28px; display:block; }
-
-/* ===== MOBILE: 1 COLUNA (fica mais bonito), mas ainda troca "2 por vez" no código (ou 1 por vez se você quiser) ===== */
-@media (max-width: 520px){
-  .page{ grid-template-columns: 1fr; }
-}
 
 /* sidebar full */
 @media (max-width: 768px){

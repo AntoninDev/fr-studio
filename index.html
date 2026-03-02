@@ -73,13 +73,18 @@
       <div class="group-head">
         <h3 class="group-title">Identidade Visual</h3>
 
-        <div class="pager-controls">
+        <!-- (opcional) você pode remover isso. deixei escondível via CSS -->
+        <div class="pager-controls pager-controls--top">
           <button class="pager-btn pager-prev" type="button" aria-label="Voltar projetos">‹</button>
           <button class="pager-btn pager-next" type="button" aria-label="Avançar projetos">›</button>
         </div>
       </div>
 
-      <div class="portfolio-grid">
+      <div class="portfolio-grid" aria-label="Projetos - Identidade Visual">
+        <!-- Setas laterais no MEIO dos cards -->
+        <button class="pager-btn pager-btn--side pager-prev" type="button" aria-label="Voltar projetos">‹</button>
+        <button class="pager-btn pager-btn--side pager-next" type="button" aria-label="Avançar projetos">›</button>
+
         <!-- PAGE 0 (2 cards) -->
         <div class="page active">
           <button class="portfolio-card portfolio-card--click" type="button"
@@ -95,7 +100,7 @@
           </button>
         </div>
 
-        <!-- PAGE 1 (mais 2 cards) -->
+        <!-- PAGE 1 -->
         <div class="page">
           <button class="portfolio-card portfolio-card--click" type="button"
             data-expand="media/img.jpeg" aria-label="Abrir projeto 3">
@@ -109,6 +114,36 @@
             <span class="card-badge">Ver projeto</span>
           </button>
         </div>
+
+        <!-- PAGE 2 -->
+        <div class="page">
+          <button class="portfolio-card portfolio-card--click" type="button"
+            data-expand="media/img.jpeg" aria-label="Abrir projeto 5">
+            <img src="media/teste2.png" alt="Projeto 5 (thumb)" />
+            <span class="card-badge">Ver projeto</span>
+          </button>
+
+          <button class="portfolio-card portfolio-card--click" type="button"
+            data-expand="media/img.jpeg" aria-label="Abrir projeto 6">
+            <img src="media/teste2.png" alt="Projeto 6 (thumb)" />
+            <span class="card-badge">Ver projeto</span>
+          </button>
+        </div>
+
+        <!-- PAGE 3 -->
+        <div class="page">
+          <button class="portfolio-card portfolio-card--click" type="button"
+            data-expand="media/img.jpeg" aria-label="Abrir projeto 7">
+            <img src="media/teste2.png" alt="Projeto 7 (thumb)" />
+            <span class="card-badge">Ver projeto</span>
+          </button>
+
+          <button class="portfolio-card portfolio-card--click" type="button"
+            data-expand="media/img.jpeg" aria-label="Abrir projeto 8">
+            <img src="media/teste2.png" alt="Projeto 8 (thumb)" />
+            <span class="card-badge">Ver projeto</span>
+          </button>
+        </div>
       </div>
     </div>
 
@@ -117,36 +152,35 @@
       <div class="group-head">
         <h3 class="group-title">Impressos</h3>
 
-        <div class="pager-controls">
+        <div class="pager-controls pager-controls--top">
           <button class="pager-btn pager-prev" type="button" aria-label="Voltar projetos">‹</button>
           <button class="pager-btn pager-next" type="button" aria-label="Avançar projetos">›</button>
         </div>
       </div>
 
-      <div class="portfolio-grid">
+      <div class="portfolio-grid" aria-label="Projetos - Impressos">
+        <button class="pager-btn pager-btn--side pager-prev" type="button" aria-label="Voltar projetos">‹</button>
+        <button class="pager-btn pager-btn--side pager-next" type="button" aria-label="Avançar projetos">›</button>
+
         <div class="page active">
-          <button class="portfolio-card portfolio-card--click" type="button"
-            data-expand="media/img.jpeg">
+          <button class="portfolio-card portfolio-card--click" type="button" data-expand="media/img.jpeg">
             <img src="media/teste2.png" alt="Impressos 1" />
             <span class="card-badge">Ver projeto</span>
           </button>
 
-          <button class="portfolio-card portfolio-card--click" type="button"
-            data-expand="media/expand-picanha.jpg">
+          <button class="portfolio-card portfolio-card--click" type="button" data-expand="media/expand-picanha.jpg">
             <img src="media/teste2.png" alt="Impressos 2" />
             <span class="card-badge">Ver projeto</span>
           </button>
         </div>
 
         <div class="page">
-          <button class="portfolio-card portfolio-card--click" type="button"
-            data-expand="media/expand-picanha.jpg">
+          <button class="portfolio-card portfolio-card--click" type="button" data-expand="media/expand-picanha.jpg">
             <img src="media/teste2.png" alt="Impressos 3" />
             <span class="card-badge">Ver projeto</span>
           </button>
 
-          <button class="portfolio-card portfolio-card--click" type="button"
-            data-expand="media/expand-picanha.jpg">
+          <button class="portfolio-card portfolio-card--click" type="button" data-expand="media/expand-picanha.jpg">
             <img src="media/teste2.png" alt="Impressos 4" />
             <span class="card-badge">Ver projeto</span>
           </button>

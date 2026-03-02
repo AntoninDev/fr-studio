@@ -91,9 +91,7 @@ modal?.addEventListener("click", (e) => {
 });
 
 document.addEventListener("keydown", (e) => {
-  if (e.key === "Escape" && modal?.classList.contains("active")) {
-    closeProject();
-  }
+  if (e.key === "Escape" && modal?.classList.contains("active")) closeProject();
 });
 
 // clique nos cards abre modal
@@ -109,29 +107,38 @@ function bindCards(scope = document) {
 bindCards(document);
 
 // ===== PAGINAÇÃO: 2 CARDS POR VEZ (page 0, page 1, ...) =====
+// Agora os botões podem existir no topo e/ou nas laterais.
+// Como existem 2 pares de botões no mesmo grupo (top + side), a gente liga todos.
 document.querySelectorAll(".portfolio-group[data-pager='2']").forEach((group) => {
   const pages = Array.from(group.querySelectorAll(".page"));
-  const prevBtn = group.querySelector(".pager-prev");
-  const nextBtn = group.querySelector(".pager-next");
+
+  const prevBtns = Array.from(group.querySelectorAll(".pager-prev"));
+  const nextBtns = Array.from(group.querySelectorAll(".pager-next"));
 
   let index = 0;
 
   function render() {
     pages.forEach((p, i) => p.classList.toggle("active", i === index));
 
-    // regras: no primeiro não tem voltar, no último não tem avançar
-    if (prevBtn) prevBtn.classList.toggle("is-hidden", index === 0);
-    if (nextBtn) nextBtn.classList.toggle("is-hidden", index === pages.length - 1);
+    const isFirst = index === 0;
+    const isLast = index === pages.length - 1;
+
+    prevBtns.forEach((btn) => btn.classList.toggle("is-hidden", isFirst));
+    nextBtns.forEach((btn) => btn.classList.toggle("is-hidden", isLast));
   }
 
-  prevBtn?.addEventListener("click", () => {
-    if (index > 0) index--;
-    render();
+  prevBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (index > 0) index--;
+      render();
+    });
   });
 
-  nextBtn?.addEventListener("click", () => {
-    if (index < pages.length - 1) index++;
-    render();
+  nextBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      if (index < pages.length - 1) index++;
+      render();
+    });
   });
 
   render();
