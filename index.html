@@ -15,10 +15,9 @@
   </header>
 
   <nav class="sidebar" id="sidebar" aria-label="Menu">
-    <a href="#">Início</a>
-    <a href="#">Serviços</a>
-    <a href="#portfolio">Portfólio</a>
-    <a href="#">Contato</a>
+    <a href="#" data-nav="inicio">Início</a>
+    <a href="#identidade-visual">Portfólio</a>
+    <a href="#contato" data-nav="contato">Contato</a>
   </nav>
 
   <div class="overlay" id="overlay"></div>
@@ -69,11 +68,10 @@
     </div>
 
     <!-- ===== GRUPO 1 ===== -->
-    <div class="portfolio-group" data-pager="2">
+    <div class="portfolio-group" id="identidade-visual" data-pager="2">
       <div class="group-head">
         <h3 class="group-title">Identidade Visual</h3>
 
-        <!-- (opcional) você pode remover isso. deixei escondível via CSS -->
         <div class="pager-controls pager-controls--top">
           <button class="pager-btn pager-prev" type="button" aria-label="Voltar projetos">‹</button>
           <button class="pager-btn pager-next" type="button" aria-label="Avançar projetos">›</button>
@@ -81,11 +79,9 @@
       </div>
 
       <div class="portfolio-grid" aria-label="Projetos - Identidade Visual">
-        <!-- Setas laterais no MEIO dos cards -->
         <button class="pager-btn pager-btn--side pager-prev" type="button" aria-label="Voltar projetos">‹</button>
         <button class="pager-btn pager-btn--side pager-next" type="button" aria-label="Avançar projetos">›</button>
 
-        <!-- PAGE 0 (2 cards) -->
         <div class="page active">
           <button class="portfolio-card portfolio-card--click" type="button"
             data-expand="media/img.jpeg" aria-label="Abrir projeto 1">
@@ -100,7 +96,6 @@
           </button>
         </div>
 
-        <!-- PAGE 1 -->
         <div class="page">
           <button class="portfolio-card portfolio-card--click" type="button"
             data-expand="media/img.jpeg" aria-label="Abrir projeto 3">
@@ -115,7 +110,6 @@
           </button>
         </div>
 
-        <!-- PAGE 2 -->
         <div class="page">
           <button class="portfolio-card portfolio-card--click" type="button"
             data-expand="media/img.jpeg" aria-label="Abrir projeto 5">
@@ -130,7 +124,6 @@
           </button>
         </div>
 
-        <!-- PAGE 3 -->
         <div class="page">
           <button class="portfolio-card portfolio-card--click" type="button"
             data-expand="media/img.jpeg" aria-label="Abrir projeto 7">
@@ -189,6 +182,41 @@
     </div>
 
   </section>
+
+<!-- MODAL CONTATO (estrutura igual ao modal de projeto) -->
+<div class="project-modal" id="contact-modal" aria-hidden="true" role="dialog" aria-modal="true">
+  <div class="project-modal__backdrop" data-contact-close="true"></div>
+
+  <div class="project-modal__panel" role="document">
+    <div class="project-modal__top">
+      <button class="project-modal__close" type="button" id="contact-close" aria-label="Fechar contato">✕</button>
+    </div>
+
+    <div class="project-modal__content">
+      <div class="contact-box">
+        <h3 class="contact-title">Contato</h3>
+        <p class="contact-subtitle">Chama no WhatsApp ou fala com a gente no Instagram.</p>
+
+        <a class="contact-whats"
+           href="https://wa.me/5522998589275?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento."
+           target="_blank"
+           rel="noopener">
+          WhatsApp
+        </a>
+
+        <a class="contact-ig"
+           href="https://www.instagram.com/frstudio.official/"
+           target="_blank"
+           rel="noopener">
+          Instagram: <strong>@frstudio.oficial</strong>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <!-- ÂNCORA DE CONTATO (pra não quebrar o link do menu) -->
+  <div id="contato"></div>
 
   <section class="bottom-strip" aria-label="Mensagem final">
     <p>Posicionamento não é estética. <br>É poder.</p>

@@ -143,3 +143,118 @@ document.querySelectorAll(".portfolio-group[data-pager='2']").forEach((group) =>
 
   render();
 });
+
+// ===== MENU: scroll suave com offset do header (SEM mexer nas funções existentes) =====
+(function () {
+  const header = document.querySelector(".header");
+  const headerH = () => (header ? header.offsetHeight : 0);
+
+  sidebar?.addEventListener("click", (e) => {
+    const a = e.target.closest("a");
+    if (!a) return;
+
+    const href = a.getAttribute("href") || "";
+    if (!href.startsWith("#") || href === "#") {
+      // comportamento padrão (não quebra)
+      return;
+    }
+
+    const target = document.querySelector(href);
+    if (!target) return;
+
+    e.preventDefault();
+
+    // fecha o menu do jeito que você já faz
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+    menuBtn.textContent = "☰";
+    menuBtn.setAttribute("aria-expanded", "false");
+    menuOpen = false;
+
+    const y = target.getBoundingClientRect().top + window.pageYOffset - headerH() - 10;
+    window.scrollTo({ top: y, behavior: "smooth" });
+  });
+})();
+
+// ===== MENU: Inicio -> topo / Contato -> abre modal contato =====
+(function () {
+  const contactModal = document.getElementById("contact-modal");
+  const contactClose = document.getElementById("contact-close");
+
+  function openContact() {
+    if (!contactModal) return;
+    contactModal.classList.add("active");
+    contactModal.setAttribute("aria-hidden", "false");
+    document.body.classList.add("no-scroll");
+
+    const content = contactModal.querySelector(".project-modal__content");
+    if (content) content.scrollTop = 0;
+    setTimeout(() => contactClose?.focus(), 0);
+  }
+
+  function closeContact() {
+    if (!contactModal) return;
+    contactModal.classList.remove("active");
+    contactModal.setAttribute("aria-hidden", "true");
+
+    // se o modal de projeto NÃO estiver aberto, libera scroll
+    const projectModal = document.getElementById("project-modal");
+    if (!projectModal?.classList.contains("active")) {
+      document.body.classList.remove("no-scroll");
+    }
+  }
+
+  contactClose?.addEventListener("click", closeContact);
+
+  contactModal?.addEventListener("click", (e) => {
+    const t = e.target;
+    if (t && t.matches("[data-contact-close='true']")) closeContact();
+  });
+
+  // ESC fecha o contato primeiro (se estiver aberto)
+  document.addEventListener("keydown", (e) => {
+    if (e.key !== "Escape") return;
+    if (contactModal?.classList.contains("active")) closeContact();
+  });
+
+  // clique nos links do menu
+  sidebar?.addEventListener("click", (e) => {
+    const a = e.target.closest("a");
+    if (!a) return;
+
+    const nav = a.getAttribute("data-nav");
+
+    // INÍCIO -> topo
+    if (nav === "inicio") {
+      e.preventDefault();
+
+      // fecha menu do jeito que você já faz
+      sidebar.classList.remove("active");
+      overlay.classList.remove("active");
+      menuBtn.textContent = "☰";
+      menuBtn.setAttribute("aria-expanded", "false");
+      menuOpen = false;
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      return;
+    }
+
+    // CONTATO -> abre modal contato
+    if (nav === "contato") {
+      e.preventDefault();
+
+      // fecha menu
+      sidebar.classList.remove("active");
+      overlay.classList.remove("active");
+      menuBtn.textContent = "☰";
+      menuBtn.setAttribute("aria-expanded", "false");
+      menuOpen = false;
+
+      // se o modal de projeto estiver aberto, fecha ele antes (evita empilhar)
+      if (modal?.classList.contains("active")) closeProject();
+
+      openContact();
+      return;
+    }
+  });
+})();
