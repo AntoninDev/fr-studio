@@ -53,6 +53,15 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
 }
 .logo{ height:55px; }
 
+.menu-btn:focus,
+.menu-btn:focus-visible{
+  outline: none;
+}
+
+.menu-btn::-moz-focus-inner{
+  border: 0;
+}
+
 .menu-btn{
   position:absolute; right:15px; top:50%;
   transform:translateY(-50%);
@@ -61,6 +70,11 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
   color:var(--branco);
   font-size:28px;
   cursor:pointer;
+  -webkit-appearance: none;
+  appearance: none;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: geometricPrecision;
+  opacity: 1;
 }
 .menu-btn:active{ transform:translateY(-50%) scale(.92); }
 
@@ -118,7 +132,7 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
   margin-top:14px;
   display:inline-flex; align-items:center; gap:10px;
   background:var(--brand);
-  color:#000000;
+  color:#1f1b1b;
   text-decoration:none;
   padding:10px 14px;
   border-radius:999px;
