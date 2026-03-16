@@ -616,8 +616,14 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
     .destaques,
     .portfolio{ max-width:1180px; }
   }
-  
-  .menu-btn img{
-    width: 24px;
-    height: 24px;
-  }
+
+.menu-btn img{
+  width:24px;
+  height:24px;
+  display:block;
+}
+
+.menu-btn{
+  font-size:28px;
+  line-height:1;
+}
