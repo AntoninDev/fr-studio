@@ -172,12 +172,9 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
   margin-bottom:14px;
 }
 .group-title{ font-size:26px; }
-
-/* controles de topo (deixei opcional, dá pra ocultar) */
 .pager-controls{ display:flex; gap:10px; }
-.pager-controls--top{ display:none; } /* <-- se quiser mostrar no topo, troque pra flex */
+.pager-controls--top{ display:none; } 
 
-/* botão base */
 .pager-btn{
   width:38px; height:38px;
   border-radius:999px;
@@ -215,17 +212,15 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
   padding: 0 56px;
 }
 
-/* cria área fixa para as setas (não sobrepõe o card) */
 .portfolio-grid .page{
-  padding: 0 8px;               /* respiro interno */
+  padding: 0 8px;            
 }
 
-/* ===== SETAS: HITBOX REAL (clique pega na bolinha inteira) ===== */
 .pager-btn--side{
   position:absolute;
   top:50%;
   transform:translateY(-50%);
-  z-index:999;                 /* acima de tudo */
+  z-index:999;               
 
   width:44px;
   height:44px;
@@ -242,7 +237,7 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
   border: 1px solid rgba(255,255,255,.14);
   backdrop-filter: blur(10px);
 
-  pointer-events:auto;         /* garante clique no botão */
+  pointer-events:auto;         
 }
 
 .portfolio-card{
@@ -250,19 +245,19 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
   z-index: 1;
 }
 
-/* Aumenta a área clicável sem mudar o visual */
+
 .pager-btn--side::after{
   content:"";
   position:absolute;
-  inset:-10px;                 /* HITBOX maior */
+  inset:-10px;                 
 }
-/* garante que o card não “pega” clique por baixo da seta */
+
 .portfolio-card{
   position: relative;
   z-index: 1;
 }
 
-/* botões laterais no meio vertical do grid */
+
 .pager-btn--side{
   position:absolute;
   top:50%;
@@ -277,7 +272,7 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
 .portfolio-grid .pager-prev.pager-btn--side{ left:0; }
 .portfolio-grid .pager-next.pager-btn--side{ right:0; }
 
-/* cada "page" é um par de cards */
+
 .page{
   display:none;
   grid-template-columns: repeat(2, 1fr);
@@ -285,7 +280,7 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
 }
 .page.active{ display:grid; }
 
-/* cards */
+
 .portfolio-card{
   position:relative;
   overflow:hidden;
@@ -327,7 +322,7 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
   backdrop-filter: blur(8px);
 }
 
-/* ===== MOBILE: continua 2 colunas, só “aperta” ===== */
+
 @media (max-width: 520px){
   .portfolio-grid{ padding: 0 36px; }
   .page{ gap:10px; }
@@ -513,41 +508,33 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
   transform: translateY(-2px);
   filter: brightness(1.05);
 }
-/* ===== MODAL: encaixar abaixo do header fixo ===== */
+
 .header{
   position: fixed;
   top: 0; left: 0;
   width: 100%;
-  z-index: 4000; /* header sempre por cima */
+  z-index: 4000;
 }
 
 .project-modal{
-  z-index: 3000; /* abaixo do header */
+  z-index: 3000; 
 }
 
 .project-modal__panel{
-  /* cola no header, sem espaço extra */
   margin: var(--header-h) auto 0;
-  
-  /* ocupa toda a altura abaixo do header */
   height: calc(100vh - var(--header-h));
   max-height: calc(100vh - var(--header-h));
-  
-  /* mantém o visual responsivo */
   width: min(1040px, 94vw);
 }
 
 /* =========================
 
    RESPONSIVIDADE SÓ TABLET / PC
-   (mobile permanece igual)
 ========================= */
 
-/* melhora a ancoragem de scroll sem mexer em JS */
 #portfolio, #identidade-visual, #contato{
   scroll-margin-top: calc(var(--header-h) + 12px);
 }
-/* sidebar full */
 @media (max-width: 768px){
   .sidebar{
     width:100%;
@@ -572,6 +559,12 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
   
   .sidebar{ width:300px; }
 }
+
+.menu-btn img{
+  width: 24px;
+  height: 24px;
+}
+
 /* PC */
 @media (min-width: 1024px){
   :root{
@@ -594,7 +587,7 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
     width:min(1040px, 90vw);
     height:min(88vh, 900px);
   }
-    /* HERO: banner menor e mais “fino” */
+
     .banner{
       width: 88%;
       max-width: 1100px;
@@ -606,13 +599,12 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
       border-radius: 18px;
     }
   
-    /* texto principal + CTA fica mais “hero” */
     .div-texto-principal{
       margin: 28px auto 16px;
       max-width: 1100px;
     }
     .portfolio-card{
-  aspect-ratio: 1 / 1;   /* quadrado */
+  aspect-ratio: 1 / 1;  
   border-radius: 14px;
 }
 
@@ -621,7 +613,6 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
 }
 }
 
-/* PC grande */
 @media (min-width: 1360px){
   .header-container{ max-width:1280px; }
   .banner,
@@ -629,4 +620,3 @@ body.no-scroll{ overflow:hidden; touch-action:none; }
   .destaques,
   .portfolio{ max-width:1180px; }
 }
-
