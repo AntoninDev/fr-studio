@@ -43,15 +43,20 @@ menuBtn?.addEventListener("click", () => {
   sidebar.classList.toggle("active");
   overlay.classList.toggle("active");
 
-  menuBtn.textContent = menuOpen ? "✕" : "☰";
+  menuBtn.innerHTML = menuOpen
+    ? "✕"
+    : '<img src="media/icons/menu-bar.svg" alt="Menu">';
+
   menuBtn.setAttribute("aria-expanded", String(menuOpen));
 });
 
 overlay?.addEventListener("click", () => {
   sidebar.classList.remove("active");
   overlay.classList.remove("active");
-  menuBtn.textContent = "☰";
+
+  menuBtn.innerHTML = '<img src="media/icons/menu.svg" alt="Menu">';
   menuBtn.setAttribute("aria-expanded", "false");
+
   menuOpen = false;
 });
 
