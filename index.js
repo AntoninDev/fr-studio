@@ -1,3 +1,35 @@
+// ===== TYPING EFFECT =====
+const titleText = "Não criamos arte. \nCriamos posicionamento.";
+const subtitleText = "Estratégia, design e execução para negócios que querem crescer.";
+const speed = 70;
+
+let i = 0;
+let j = 0;
+
+function typeTitle() {
+  const el = document.getElementById("typing-text");
+  if (!el) return;
+
+  if (i < titleText.length) {
+    el.innerHTML += titleText.charAt(i);
+    i++;
+    setTimeout(typeTitle, speed);
+  } else {
+    typeSubtitle();
+  }
+}
+function typeSubtitle() {
+  const el = document.getElementById("typing-subtitle");
+  if (!el) return;
+
+  if (j < subtitleText.length) {
+    el.innerHTML += subtitleText.charAt(j);
+    j++;
+    setTimeout(typeSubtitle, speed);
+  }
+}
+typeTitle();
+
 // ===== MENU LATERAL =====
 const menuBtn = document.getElementById("menu-btn");
 const sidebar = document.getElementById("sidebar");

@@ -4,13 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="index.css" />
-  <link rel="icon" type="image/jpeg" href="media/icons/logo.png">
-  <title>DUTRA ENGENHARIA</title>
+  <link rel="icon" type="image/jpeg" href="media/icons/logo.jpeg">
+  <title>FR STUDIO</title>
 </head>
 <body>
   <header class="header">
     <div class="header-container">
-      <img src="media/icons/perfil.png" alt="Logo da gráfica" class="logo" />
+      <img src="media/icons/perfil.svg" alt="Logo da gráfica" class="logo" />
       <button class="menu-btn" id="menu-btn" aria-label="Abrir menu" aria-expanded="false">
         <img src="media/icons/menu-bar.svg" alt="">
       </button>
@@ -26,23 +26,22 @@
   <div class="overlay" id="overlay"></div>
 
   <section class="banner">
-    <img src="media/banner.png" alt="Banner fr studio" />
+    <img src="media/banner.jpeg" alt="Banner fr studio" />
   </section>
 
   <div class="div-texto-principal">
-    <h1 id="typing-text" class="texto-principal">
-      A assistência que a sua familia precisa para construir a sua casa dos sonhos!
-    </h1>
+    <h1 id="typing-text" class="texto-principal"></h1>
+    <p id="typing-subtitle" class="sub-texto-principal"></p>
 
     <a class="ig-btn"
-       href="https://www.instagram.com/eng_magnosdutra/"
+       href="https://www.instagram.com/frstudio.official/"
        target="_blank"
        rel="noopener"
        aria-label="Abrir Instagram @frstudio.oficial">
       <span class="ig-btn__icon" aria-hidden="true">
         <img src="media/icons/instagram.png">
       </span>
-      <span class="ig-btn__text">@eng_magnosdutra</span>
+      <span class="ig-btn__text">@frstudio.oficial</span>
     </a>
   </div>
 
@@ -50,24 +49,28 @@
   <section class="destaques" aria-label="Destaques">
     <div class="destaques-grid">
       <div class="media-slot media-slot--big">
-        <img src="media/icons/perfil.png" alt="Loja" />
+        <img src="media/cards-principais/loja.jpeg" alt="Loja" />
       </div>
       <div class="media-slot media-slot--small">
-        <img src="media/icons/perfil.png" alt="Blusa personalizada" />
+        <img src="media/cards-principais/blusa.jpeg" alt="Blusa personalizada" />
       </div>
       <div class="media-slot media-slot--rect">
-        <img src="media/icons/perfil.png" alt="Boné personalizado" />
+        <img src="media/cards-principais/bone.jpeg" alt="Boné personalizado" />
       </div>
     </div>
   </section>
 
   <!-- PORTFÓLIO -->
   <section class="portfolio" id="portfolio" aria-label="Portfólio">
+    <div class="section-head">
+      <h2 class="section-title">Portfólio</h2>
+      <p class="section-subtitle">Clique em um projeto para ver a apresentação completa.</p>
+    </div>
 
     <!-- ===== GRUPO 1 ===== -->
     <div class="portfolio-group" id="identidade-visual" data-pager="2">
       <div class="group-head">
-        <h3 class="group-title">Projetos 3D</h3>
+        <h3 class="group-title">Identidade Visual</h3>
 
         <div class="pager-controls pager-controls--top">
           <button class="pager-btn pager-prev" type="button" aria-label="Voltar projetos">‹</button>
@@ -81,66 +84,65 @@
 
         <div class="page active">
           <button class="portfolio-card portfolio-card--click" type="button"
-            data-expand="media/icons/perfil.png" aria-label="Abrir projeto 1">
-            <img src="media/icons/perfil.png" alt="Pojeto picanha do canal" />
+            data-expand="media/identidades/picanha-do-canal.jpeg" aria-label="Abrir projeto 1">
+            <img src="media/capas/capa-picanha-do-canal.jpeg" alt="Pojeto picanha do canal" />
             <span class="card-badge">Ver projeto</span>
           </button>
 
           <button class="portfolio-card portfolio-card--click" type="button"
-            data-expand="media/icons/perfil.png" aria-label="Projeto tourcia">
-            <img src="media/icons/perfil.png" alt="Projeto 2 (thumb)" />
+            data-expand="media/identidades/tour-cia.jpeg" aria-label="Projeto tourcia">
+            <img src="media/capas/capa-tour-cia.jpeg" alt="Projeto 2 (thumb)" />
+            <span class="card-badge">Ver projeto</span>
+          </button>
+        </div>
+<!--
+        <div class="page">
+          <button class="portfolio-card portfolio-card--click" type="button"
+            data-expand="media/img.jpeg" aria-label="Abrir projeto 3">
+            <img src="media/teste2.png" alt="Projeto 3 (thumb)" />
+            <span class="card-badge">Ver projeto</span>
+          </button>
+
+          <button class="portfolio-card portfolio-card--click" type="button"
+            data-expand="media/img.jpeg" aria-label="Abrir projeto 4">
+            <img src="media/teste2.png" alt="Projeto 4 (thumb)" />
             <span class="card-badge">Ver projeto</span>
           </button>
         </div>
 
         <div class="page">
           <button class="portfolio-card portfolio-card--click" type="button"
-            data-expand="media/icons/perfil.png" aria-label="Abrir projeto 3">
-            <img src="media/icons/perfil.png" alt="Projeto 3 (thumb)" />
+            data-expand="media/img.jpeg" aria-label="Abrir projeto 5">
+            <img src="media/teste2.png" alt="Projeto 5 (thumb)" />
             <span class="card-badge">Ver projeto</span>
           </button>
 
           <button class="portfolio-card portfolio-card--click" type="button"
-            data-expand="media/icons/perfil.png" aria-label="Abrir projeto 4">
-            <img src="media/icons/perfil.png" alt="Projeto 4 (thumb)" />
-            <span class="card-badge">Ver projeto</span>
-          </button>
-        </div>
-
-        <div class="page">
-          <button class="portfolio-card portfolio-card--click" type="button"
-            data-expand="media/icons/perfil.png" aria-label="Abrir projeto 5">
-            <img src="media/icons/perfil.png" alt="Projeto 5 (thumb)" />
-            <span class="card-badge">Ver projeto</span>
-          </button>
-
-          <button class="portfolio-card portfolio-card--click" type="button"
-            data-expand="media/icons/perfil.png" aria-label="Abrir projeto 6">
-            <img src="media/icons/perfil.png" alt="Projeto 6 (thumb)" />
+            data-expand="media/img.jpeg" aria-label="Abrir projeto 6">
+            <img src="media/teste2.png" alt="Projeto 6 (thumb)" />
             <span class="card-badge">Ver projeto</span>
           </button>
         </div>
 
         <div class="page">
           <button class="portfolio-card portfolio-card--click" type="button"
-            data-expand="media/icons/perfil.png" aria-label="Abrir projeto 7">
-            <img src="media/icons/perfil.png" alt="Projeto 7 (thumb)" />
+            data-expand="media/img.jpeg" aria-label="Abrir projeto 7">
+            <img src="media/teste2.png" alt="Projeto 7 (thumb)" />
             <span class="card-badge">Ver projeto</span>
           </button>
 
           <button class="portfolio-card portfolio-card--click" type="button"
-            data-expand="media/icons/perfil.png" aria-label="Abrir projeto 8">
-            <img src="media/icons/perfil.png" alt="Projeto 8 (thumb)" />
+            data-expand="media/img.jpeg" aria-label="Abrir projeto 8">
+            <img src="media/teste2.png" alt="Projeto 8 (thumb)" />
             <span class="card-badge">Ver projeto</span>
           </button>
         </div>
       </div>
     </div>
 
-    <!-- ===== GRUPO 2 (exemplo) ===== -->
     <div class="portfolio-group" data-pager="2">
       <div class="group-head">
-        <h3 class="group-title">Vistorias</h3>
+        <h3 class="group-title">Impressos</h3>
 
         <div class="pager-controls pager-controls--top">
           <button class="pager-btn pager-prev" type="button" aria-label="Voltar projetos">‹</button>
@@ -154,24 +156,24 @@
 
         <div class="page active">
           <button class="portfolio-card portfolio-card--click" type="button" data-expand="media/img.jpeg">
-            <img src="media/icons/perfil.png" alt="Impressos 1" />
+            <img src="media/teste2.png" alt="Impressos 1" />
             <span class="card-badge">Ver projeto</span>
           </button>
 
           <button class="portfolio-card portfolio-card--click" type="button" data-expand="media/expand-picanha.jpg">
-            <img src="media/icons/perfil.png" alt="Impressos 2" />
+            <img src="media/teste2.png" alt="Impressos 2" />
             <span class="card-badge">Ver projeto</span>
           </button>
         </div>
 
         <div class="page">
           <button class="portfolio-card portfolio-card--click" type="button" data-expand="media/expand-picanha.jpg">
-            <img src="media/icons/perfil.png" alt="Impressos 3" />
+            <img src="media/teste2.png" alt="Impressos 3" />
             <span class="card-badge">Ver projeto</span>
           </button>
 
           <button class="portfolio-card portfolio-card--click" type="button" data-expand="media/expand-picanha.jpg">
-            <img src="media/icons/perfil.png" alt="Impressos 4" />
+            <img src="media/teste2.png" alt="Impressos 4" />
             <span class="card-badge">Ver projeto</span>
           </button>
         </div>
@@ -180,7 +182,7 @@
 
   </section>
 
-<!-- MODAL CONTATO (estrutura igual ao modal de projeto) -->
+-->
 <div class="project-modal" id="contact-modal" aria-hidden="true" role="dialog" aria-modal="true">
   <div class="project-modal__backdrop" data-contact-close="true"></div>
 
@@ -195,22 +197,22 @@
         <p class="contact-subtitle">Chama no WhatsApp ou fala com a gente no Instagram.</p>
 
         <a class="contact-whats contact-btn whatsapp"
-        href="https://wa.me/5522998694651?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento."
+        href="https://wa.me/5522998589275?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento."
         target="_blank"
         rel="noopener">
      
        <img src="media/icons/whatsapp.png" alt="WhatsApp">
-       <span>+55 (22) 9 9869-4651</span>
+       <span>+55 (22) 9 9858-9275</span>
      
      </a>
 
      <a class="contact-ig contact-btn instagram"
-     href="https://www.instagram.com/eng_magnosdutra/"
+     href="https://www.instagram.com/frstudio.official/"
      target="_blank"
      rel="noopener">
   
      <img src="media/icons/instagram.png" alt="Instagram">
-     <span>@eng_magnosdutra</span>
+     <span>@frstudio.oficial</span>
   
   </a>
       </div>
@@ -225,7 +227,7 @@
     <p>Posicionamento não é estética. <br>É poder.</p>
   </section>
 
-  <a href="https://wa.me/5522998694651?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento."
+  <a href="https://wa.me/5522998589275?text=Olá,%20vim%20pelo%20site%20e%20gostaria%20de%20um%20orçamento."
      class="whatsapp-float"
      target="_blank"
      rel="noopener"
